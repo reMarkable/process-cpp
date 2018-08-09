@@ -19,8 +19,6 @@
 #include <core/posix/this_process.h>
 #include <core/posix/process.h>
 
-#include <boost/algorithm/string.hpp>
-
 #include <iostream>
 #include <mutex>
 #include <sstream>

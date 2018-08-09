@@ -19,7 +19,6 @@ set (GMOCK_INCLUDE_DIR "/usr/include/gmock/include" CACHE PATH "gmock source inc
 set (GMOCK_SOURCE_DIR "/usr/src/gmock" CACHE PATH "gmock source directory")
 set (GTEST_INCLUDE_DIR "${GMOCK_SOURCE_DIR}/gtest/include" CACHE PATH "gtest source include directory")
 set (GMOCK_BOTH_LIBRARIES gmock gmock_main)
-add_subdirectory(${GMOCK_SOURCE_DIR} "${CMAKE_CURRENT_BINARY_DIR}/gmock")
 
 #set (OLD_CMAKE_CXX_FLAGS ${CMAKE_CXX_FLAGS})
 # Don't treat warnings as errors in 3rd_party/{gmock,cucumber-cpp}
@@ -69,6 +68,8 @@ target_link_libraries(
 
   ${CMAKE_THREAD_LIBS_INIT}
   ${GMOCK_BOTH_LIBRARIES}
+
+  gtest
 )
 
 target_link_libraries(
@@ -78,6 +79,8 @@ target_link_libraries(
 
   ${CMAKE_THREAD_LIBS_INIT}
   ${GMOCK_BOTH_LIBRARIES}
+
+  gtest
 )
 
 target_link_libraries(
@@ -87,6 +90,8 @@ target_link_libraries(
 
   ${CMAKE_THREAD_LIBS_INIT}
   ${GMOCK_BOTH_LIBRARIES}
+
+  gtest
 )
 
 target_link_libraries(
@@ -96,6 +101,8 @@ target_link_libraries(
 
   ${CMAKE_THREAD_LIBS_INIT}
   ${GMOCK_BOTH_LIBRARIES}
+
+  gtest
 )
 
 target_link_libraries(
@@ -105,6 +112,8 @@ target_link_libraries(
 
   ${CMAKE_THREAD_LIBS_INIT}
   ${GMOCK_BOTH_LIBRARIES}
+
+  gtest
 )
 
 add_test(posix_process_test ${CMAKE_CURRENT_BINARY_DIR}/posix_process_test)
